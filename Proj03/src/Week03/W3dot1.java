@@ -15,12 +15,14 @@ public class W3dot1 {
         int day = in.nextInt();
         String day_of_week = "";
 
-        if ( day < 0 || day > 6){
+        if (day < 0 || day > 6){
             System.out.format(day + " is invalid. \nGoodbye.");
 
         }
         else {
+            //Prompts the user to enter some number of days in the future. This can be any positive value.
             System.out.print("Enter the number of days in the future: ");
+            //Gets the user's input and saves it. If the value is negative, tell the user the input is invalid and terminate the program.
             int elapsed = in.nextInt();
             int future_day = (day + elapsed) % 7;
             switch (day) {
@@ -46,6 +48,8 @@ public class W3dot1 {
                     day_of_week = "Saturday";
                     break;
             }
+            //Calculates the day of the week for the future day.
+            //Displays the day of the week for today and the day of the week for the future day.
             if (future_day == 0) {
                 System.out.printf("Today is %s and the future day is Sunday", day_of_week);
             } else if (future_day == 1) {
@@ -61,8 +65,10 @@ public class W3dot1 {
             } else if (future_day == 6) {
                 System.out.printf("Today is %s and the future day is Saturday", day_of_week);
             } else {
+                //If the value is negative, tell the user the input is invalid and terminate the program.
                 System.out.format(elapsed + " is invalid. You must enter a positive number.");
             }
+            //Outputs a goodbye message.
             System.out.println("\nGoodbye.");
         }
     }
